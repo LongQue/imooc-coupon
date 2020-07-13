@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d262b95-d091-4c23-88c5-902dafba16ab" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../environment/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="E:\environment\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ePRwTXYWb8gEMa29vsjmFjgOf0" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/coupon-eureka/src/main/resources" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code-study\imooc-coupon\imooc-coupon-service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code-study\imooc-coupon\coupon-eureka\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ZuulGatewayApplication">
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="coupon-eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.imooc.coupon.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZuulGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="coupon-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.imooc.coupon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.imooc.coupon.ZuulGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ZuulGatewayApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d262b95-d091-4c23-88c5-902dafba16ab" name="Default Changelist" comment="" />
+      <created>1594221479399</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594221479399</updated>
+      <workItem from="1594221481742" duration="2315000" />
+      <workItem from="1594268136577" duration="2424000" />
+      <workItem from="1594354386379" duration="2236000" />
+      <workItem from="1594615590090" duration="1093000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1210" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1594356140088">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1210" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594356140088" />
+    <state x="1233" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594356152750">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1233" y="379" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1594356152750" />
+    <state x="948" y="300" key="FileChooserDialogImpl" timestamp="1594221539309">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="948" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594221539309" />
+    <state width="1876" height="425" key="GridCell.Tab.0.bottom" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.0.center" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.0.left" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.0.right" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.1.bottom" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.1.center" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.1.left" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state width="1876" height="425" key="GridCell.Tab.1.right" timestamp="1594223820129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="425" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594223820129" />
+    <state x="753" y="167" key="SettingsEditor" timestamp="1594221743666">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="167" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594221743666" />
+    <state x="526" y="173" key="new project wizard" timestamp="1594355201994">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="526" y="173" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1594355201994" />
+    <state x="1149" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1594269019501">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1149" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594269019501" />
+  </component>
+</project>
