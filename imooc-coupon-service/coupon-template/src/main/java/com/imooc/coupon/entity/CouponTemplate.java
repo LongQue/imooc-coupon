@@ -1,8 +1,14 @@
 package com.imooc.coupon.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.coupon.constant.CouponCategory;
 import com.imooc.coupon.constant.DistributeTarget;
 import com.imooc.coupon.constant.ProductLine;
+import com.imooc.coupon.converter.CouponCategoryConverter;
+import com.imooc.coupon.converter.DistributeTargetConverter;
+import com.imooc.coupon.converter.ProductLineConverter;
+import com.imooc.coupon.converter.RuleConverter;
+import com.imooc.coupon.serialization.CouponTemplateSerialize;
 import com.imooc.coupon.vo.TemplateRule;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,8 +32,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+//配合@CreateBy自动填充创建者 @UpdateTimeStamp填充更新时间 @CreateTime填充创建时间
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "coupon_template")
+@JsonSerialize(using = CouponTemplateSerialize.class)
 public class CouponTemplate implements Serializable {
 
     /**
@@ -35,50 +43,51 @@ public class CouponTemplate implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id",nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
     /**
      * 是否可用状态
      */
-    @Column(name="available",nullable = false)
+    @Column(name = "available", nullable = false)
     private Boolean available;
 
     /**
      * 是否过期
      */
-    @Column(name="expired",nullable = false)
+    @Column(name = "expired", nullable = false)
     private Boolean expired;
 
     /**
      * 优惠券名称
      */
-    @Column(name="name",nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     /**
      * 优惠券 logo
      */
-    @Column(name="logo",nullable = false)
+    @Column(name = "logo", nullable = false)
     private String logo;
 
     /**
      * 优惠券描述
      */
-    @Column(name = "intro",nullable = false)
+    @Column(name = "intro", nullable = false)
     private String desc;
 
     /**
      * 优惠券分类
      */
     @Column(name = "category", nullable = false)
-    @Convert
+    @Convert(converter = CouponCategoryConverter.class)
     private CouponCategory category;
 
     /**
      * 产品线
      */
     @Column(name = "product_line", nullable = false)
+    @Convert(converter = ProductLineConverter.class)
     private ProductLine productLine;
 
     /**
@@ -103,20 +112,22 @@ public class CouponTemplate implements Serializable {
     /**
      * 优惠券模板的编码
      */
-    @Column(name="template_key",nullable = false)
+    @Column(name = "template_key", nullable = false)
     private String key;
 
     /**
      * 目标用户
      */
     @Column(name = "target", nullable = false)
+    @Convert(converter = DistributeTargetConverter.class)
     private DistributeTarget target;
 
     /**
      * 优惠券规则
      */
     @Column(name = "rule", nullable = false)
-    private  transient TemplateRule rule;
+    @Convert(converter = RuleConverter.class)
+    private TemplateRule rule;
 
     public CouponTemplate(String name, String logo, String desc, String category, Integer productLine, Integer count, Long userId, Integer target, TemplateRule rule) {
         //刚创建的优惠券模板应该是不可用且没过期
@@ -131,7 +142,7 @@ public class CouponTemplate implements Serializable {
         //优惠券唯一编码 = 4(产品线和类型)+8(日期：20190101)+id(扩充4位),待创建完成数据库返回再拼接id
         this.key = productLine.toString() + category + new SimpleDateFormat("yyyyMMdd").format(new Date());
         this.target = DistributeTarget.of(target);
-        this.rule=rule;
+        this.rule = rule;
     }
 }
 
