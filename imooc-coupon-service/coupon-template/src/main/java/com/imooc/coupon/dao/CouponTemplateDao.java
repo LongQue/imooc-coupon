@@ -33,5 +33,5 @@ public interface CouponTemplateDao extends JpaRepository<CouponTemplate, Integer
      * @param expired
      * @return
      */
-    List<CouponTemplate> findAllByExAndExpired(Boolean expired);
+    List<CouponTemplate> findAllByExpired(Boolean expired);
 }
