@@ -1,6 +1,7 @@
 package com.imooc.coupon.feign;
 
 import com.imooc.coupon.exception.CouponException;
+import com.imooc.coupon.feign.hystrix.SettlementClientHystrix;
 import com.imooc.coupon.vo.CommonResponse;
 import com.imooc.coupon.vo.SettlementInfo;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author ZhouFufeng
  * @since 2020/7/20
  */
-@FeignClient(value = "eureka-client-coupon-settlement")
+@FeignClient(value = "eureka-client-coupon-settlement",fallback = SettlementClientHystrix.class)
 public interface SettlementClient {
 
     /**
