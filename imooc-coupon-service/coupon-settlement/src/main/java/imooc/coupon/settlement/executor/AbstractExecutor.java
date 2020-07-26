@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
 public abstract class AbstractExecutor {
 
     /**
-     * <h2>校验商品类型是否与优惠券皮诶</h2>
+     * <h2>校验商品类型是否与优惠券匹配</h2>
      * 注意：
-     * 1、这里实现的但疲累优惠券的校验，多品类优惠券重载此方法
+     * 1、这里实现的单品类优惠券的校验，多品类优惠券重载此方法
      * 2、商品只需要有一个优惠券要求的商品类型去匹配即可
      */
     @SuppressWarnings("all")
@@ -51,7 +51,7 @@ public abstract class AbstractExecutor {
     ) {
         boolean isGoodsTypeSatisfy = isGoodsTypeSatisfy(settlement);
 
-        //当商品类型不满足时，直接返回总价，并情况优惠券
+        //当商品类型不满足时，直接返回总价，并清空优惠券
         if (!isGoodsTypeSatisfy) {
             settlement.setCost(goodsSum);
             settlement.setCouponAndTemplateInfos(Collections.emptyList());
