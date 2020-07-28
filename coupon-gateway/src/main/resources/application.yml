@@ -15,7 +15,7 @@ zuul:
   routes:
     # 优惠券模板微服务路由配置定义
     template:
-      path: /c oupon-template/**
+      path: /coupon-template/**
       serviceId: eureka-client-coupon-template
       strip-prefix: false
     # 优惠券分发微服务路由配置定义
