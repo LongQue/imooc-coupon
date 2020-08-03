@@ -1,6 +1,8 @@
 package com.imooc.coupon.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.imooc.coupon.annotation.IgnorePermission;
+import com.imooc.coupon.annotation.ImoocCouponPermission;
 import com.imooc.coupon.entity.CouponTemplate;
 import com.imooc.coupon.exception.CouponException;
 import com.imooc.coupon.service.IBuildTemplateService;
@@ -45,8 +47,9 @@ public class CouponTemplateController {
      * <h2>构建优惠券模板</h2>
      */
     @PostMapping("/template/build")
+    @ImoocCouponPermission(desc = "buildTemplate",readOnly = false)
     public CouponTemplate buildTemplate(@RequestBody TemplateRequest request) throws CouponException {
-        log.info("Build Template: []", JSON.toJSONString(request));
+        log.info("Build Template: {}", JSON.toJSONString(request));
         return buildTemplateService.buildTemplate(request);
     }
 
@@ -54,6 +57,7 @@ public class CouponTemplateController {
      * <h2>构造优惠券模板详情</h2>
      */
     @GetMapping("/template/info")
+    @ImoocCouponPermission(desc = "buildTemplateInfo")
     public CouponTemplate buildTemplateInfo(@RequestParam("id") Integer id) throws CouponException {
         log.info("Build Template Into For: {}", id);
         return templateBaseService.buildTemplateInfo(id);
@@ -63,6 +67,7 @@ public class CouponTemplateController {
      * <h2>查找所有可用的优惠券模板</h2>
      */
     @GetMapping("/template/sdk/all")
+    @IgnorePermission
     public List<CouponTemplateSDK> findAllUsableTemplate() {
         log.info("Find All Usable Template.");
         return templateBaseService.findAllUsableTemplate();
