@@ -54,7 +54,7 @@ public class CouponTemplateController {
     }
 
     /**
-     * <h2>构造优惠券模板详情</h2>
+     * <h2>根据优惠券模板id获取模板信息</h2>
      */
     @GetMapping("/template/info")
     @ImoocCouponPermission(desc = "buildTemplateInfo")

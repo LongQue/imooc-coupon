@@ -26,7 +26,7 @@ public class CreatePathRequest {
     @AllArgsConstructor
     public static class PathInfo {
         /**
-         * 路劲模式
+         * 路径模式
          */
         private String pathPattern;
 

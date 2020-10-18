@@ -152,13 +152,13 @@ public class RedisServiceImpl implements IRedisService {
 
         switch (couponStatus) {
             case USABLE:
-                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_USABLE);
+                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_USABLE,userId);
                 break;
             case USED:
-                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_USED);
+                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_USED,userId);
                 break;
             case EXPIRED:
-                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_EXPIRED);
+                redisKey = String.format("%s%s", Constant.RedisPrefix.USER_COUPON_EXPIRED,userId);
                 break;
         }
         return redisKey;
@@ -226,9 +226,9 @@ public class RedisServiceImpl implements IRedisService {
 
         coupons.forEach(c -> needCacheForUsed.put(c.getId().toString(), JSON.toJSONString(c)));
 
-        //检验当前的优惠券参数是否与Cache中的匹配
+        //当前的优惠券(redis可用)参数
         List<Integer> curUsableIds = curUsableCoupons.stream().map(Coupon::getId).collect(Collectors.toList());
-
+        //已用优惠券
         List<Integer> paramIds = coupons.stream().map(Coupon::getId).collect(Collectors.toList());
         //(A,B)  判断A是否是B的子集
         if (!CollectionUtils.isSubCollection(paramIds, curUsableIds)) {
@@ -274,9 +274,6 @@ public class RedisServiceImpl implements IRedisService {
         );
         List<Coupon> curUsableCoupons = getCachedCoupons(
                 userId,CouponStatus.USABLE.getCode()
-        );
-        List<Coupon> curExpiredCoupons = getCachedCoupons(
-                userId, CouponStatus.EXPIRED.getCode()
         );
 
         //当前可用的优惠券个数一定是大于1的

@@ -17,7 +17,7 @@ public enum HttpMethodEnum {
     HEAD,
     POST,
     PUT,
-    PATHC,
+    PATH,
     DELETE,
     OPTIONS,
     TRACE,

@@ -101,7 +101,7 @@ public class UserServiceImpl implements IUserService {
 
             //填充 dbCoupon 的 templateSDK字段
             Map<Integer, CouponTemplateSDK> id2TemplateSDK = templateClient.findIds2TemplateSDK(
-                    dbCoupons.stream().map(Coupon::getId).collect(Collectors.toList())
+                    dbCoupons.stream().map(Coupon::getTemplateId).collect(Collectors.toList())
             ).getData();
             dbCoupons.forEach(dc -> dc.setTemplateSDK(id2TemplateSDK.get(dc.getTemplateId())));
 
@@ -268,7 +268,6 @@ public class UserServiceImpl implements IUserService {
 
         // 当没有传递优惠券时，直接返回商品总价
         List<SettlementInfo.CouponAndTemplateInfo> ctInfos = info.getCouponAndTemplateInfos();
-
         if (CollectionUtils.isEmpty(ctInfos)) {
             log.info("Empty Coupons For Settle");
             double goodsSum = 0.0;
@@ -282,13 +281,14 @@ public class UserServiceImpl implements IUserService {
         }
 
         //校验传递的优惠券是否是用户自己的
+        //从redis获取自己可用的优惠券
         List<Coupon> coupons = findCouponsByStatus(
                 info.getUserId(), CouponStatus.USABLE.getCode()
         );
 
         Map<Integer, Coupon> id2Coupon = coupons.stream()
                 .collect(Collectors.toMap(Coupon::getId, Function.identity()));
-        //使用的优惠券是可用的子集
+        //待消费优惠券是自身可用优惠券的子集
         if (MapUtils.isEmpty(id2Coupon) || !CollectionUtils.isSubCollection(
                 ctInfos.stream().map(SettlementInfo.CouponAndTemplateInfo::getId)
                         .collect(Collectors.toList()), id2Coupon.keySet()
@@ -304,11 +304,12 @@ public class UserServiceImpl implements IUserService {
 
         List<Coupon> settleCoupons = new ArrayList<>(ctInfos.size());
 
+        //提取待消费优惠券的具体信息
         ctInfos.forEach(ci -> settleCoupons.add(id2Coupon.get(ci.getId())));
 
         //通过结算服务 获取结算信息
         SettlementInfo processInfo = settlementClient.computeRule(info).getData();
-
+        //employ用于判断结算是否生效，优惠券被消费则更新redis，投递kafka更新db
         if (processInfo.getEmploy() && CollectionUtils.isNotEmpty(processInfo.getCouponAndTemplateInfos())) {
             log.info("Settle User Coupon: {}, {}", info.getUserId(), JSON.toJSONString(settleCoupons));
             //更新缓存

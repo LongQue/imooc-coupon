@@ -68,6 +68,7 @@ public class AnnotationScanner {
         }
 
         // 说明有ImoocCouponPermission,取出URL
+        //@RequestMapping支持多个url映射一个方法
         Set<String> urlSet = mapInfo.getPatternsCondition().getPatterns();
 
         //取出method

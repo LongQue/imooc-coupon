@@ -47,6 +47,7 @@ public class PermissionRegistry {
 
         List<CreatePathRequest.PathInfo> pathInfos = infoList.stream()
                 .map(info -> CreatePathRequest.PathInfo.builder()
+                        .pathPattern(info.getUrl())
                         .httpMethod(info.getMethod())
                         .pathName(info.getDesc())
                         .serviceName(serviceName)

@@ -63,7 +63,7 @@ public class TemplateRule {
         private Integer period;
 
         /**
-         * 有效间隔：只对变动性有效期有效
+         * 有效间隔：只对变动性有效期有效,领取之后多久过期
          */
         private Integer gap;
 

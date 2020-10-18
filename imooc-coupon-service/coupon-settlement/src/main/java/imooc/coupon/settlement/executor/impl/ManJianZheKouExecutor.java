@@ -39,7 +39,7 @@ public class ManJianZheKouExecutor extends AbstractExecutor implements RuleExecu
     @SuppressWarnings("all")
     protected boolean isGoodsTypeSatisfy(SettlementInfo settlement) {
         log.debug("Check ManJian And ZheKou Is Match Or Not!");
-        //获取商品类型
+        //获取商品类型一个商品一个类型
         List<Integer> goodsType = settlement.getGoodsInfos().stream()
                 .map(GoodsInfo::getType).collect(Collectors.toList());
         List<Integer> templateGoodsType = new ArrayList<>();
@@ -52,6 +52,7 @@ public class ManJianZheKouExecutor extends AbstractExecutor implements RuleExecu
         });
 
         //如果想要多个优惠券，则必须所有的商品类型必须包含在内，即差集为空
+        //差集 subtract(param1,param2) 属于param1不属于param2的
         return CollectionUtils.isEmpty(CollectionUtils.subtract(
                 goodsType, templateGoodsType
         ));
